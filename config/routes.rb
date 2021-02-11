@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   
   root to: 'topics#index'
   
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  
   get 'signup', to: 'users#new'
-  resources :users, only: [:show, :create, :edit, :update, :destroy]
+  post 'signup', to: 'users#create'
+  resources :users, only: [:show, :edit, :update, :destroy]
 end
