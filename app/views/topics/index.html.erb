@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-7 bg-white">
+    <h1 class="category-topics border rounded m-3 p-3 ">新着トピック一覧</h1>
+      <% @topics.each do |topic| %>
+        <ul class="list-group">
+          <li class="list-group-item topic-item">
+            <div class="topic-created_at mb-2 text-secondary">
+              <span class="mr-3">トピ主：<%= topic.user.name %></span>
+              <span class="mr-3">作成日時：<%= topic.created_at %></span>
+            </div>
+            <div class="topic-title text-info font-weight-bold border-bottom pb-4">
+              <%= topic.title %>
+            </div>
+          </li>
+        </ul>
+      <% end %>
+      <div class="topics-pagenate ml-4 mt-4 mb-5">
+        <%= paginate @topics %>
+      </div>
+  </div>
+  <div class="offset-sm-1 col-sm-4">
+    <%= link_to'トピックを投稿', new_topic_path, class: 'btn btn-info btn-block mx-auto topic-btn' %>
+  </div>
+</div>

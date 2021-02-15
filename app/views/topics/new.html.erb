@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-sm-7 bg-white">
+    <h1 class="make-topic-title mt-3 pb-1 font-weight-bold border-bottom">トピック内容の入力</h1>
+      <%= form_with(model: @topic, local: true) do |f| %>
+        <div class="form-group">
+          <%= f.text_field :title, class: 'form-control form-control-sm mt-4 pt-4 pb-4', placeholder: 'タイトルを書く' %>
+        </div>
+        <%= f.submit 'トピックを投稿する', class: 'btn btn-info btn-block mx-auto topic-btn mt-5 mb-5' %>
+      <% end %>
+

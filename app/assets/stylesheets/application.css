@@ -20,7 +20,7 @@
 
 .navbar-brand {
     color: #000;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -29,8 +29,14 @@
 }
 
 .login-btn {
+    font-size: 12px;
+    width: 82px;
     background-color: #FFF;
     color: #007bff;
+}
+
+.signup-btn {
+    font-size: 14px;
 }
 
 body {
@@ -39,4 +45,35 @@ body {
 
 .page-title {
     font-size: 25px;
+}
+
+.category-topics {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #C9CACA;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.topic-created_at {
+    font-size: 12px;
+}
+
+.topics-pagenate {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.topic-btn {
+    max-width: 350px;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
+}
+
+.make-topic-title {
+    font-size: 17px;
 }

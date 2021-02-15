@@ -16,4 +16,6 @@ class User < ApplicationRecord
             presence: true,
             length: { minimum: 8},
             format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[\W_])[!-~]+\z/ }
+  
+  has_many :topics
 end
