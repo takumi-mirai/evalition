@@ -29,7 +29,7 @@
     <%= form_with(model: @post, url: topic_path, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group" id="comment-post">
-        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :user_id, value: current_user.id if logged_in? %>
         <%= f.text_area :content, class: 'form-control form-control-sm mt-4 pt-4 pb-4', placeholder: 'コメントを書く' %>
       </div>
       <%= f.submit 'コメントを投稿する', class: 'btn btn-sm btn-info btn-block mx-auto comment-btn' %>

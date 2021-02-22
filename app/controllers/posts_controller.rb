@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :require_user_logged_in, only: [:create]
   def create
     @topic = Topic.find(params[:id])
     @post =  @topic.posts.build(post_params)

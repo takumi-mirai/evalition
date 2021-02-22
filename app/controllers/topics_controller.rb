@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  before_action :require_user_logged_in, only: [:new, :create]
   def index
     @topics = Topic.order(id: :desc).page(params[:page]).per(2)
   end
