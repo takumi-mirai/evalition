@@ -18,4 +18,5 @@ class User < ApplicationRecord
             format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[\W_])[!-~]+\z/ }
   
   has_many :topics
+  has_many :posts
 end

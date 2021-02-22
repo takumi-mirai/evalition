@@ -4,10 +4,14 @@ class TopicsController < ApplicationController
   end
   
   def show
+    @topic = Topic.find(params[:id])
+    @posts = @topic.posts.page(params[:page]).per(30)
+    @post =  @topic.posts.build
   end
   
   def new
     @topic = current_user.topics.build
+    @topic.posts.build
   end
 
   def create
@@ -24,6 +28,7 @@ class TopicsController < ApplicationController
   private
 
   def topic_params
-    params.require(:topic).permit(:title)
+    params.require(:topic).permit(:title, posts_attributes: [:user_id, :content])
   end
+
 end
